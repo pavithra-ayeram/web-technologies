@@ -1,0 +1,33 @@
+a {
+    color: #0077B5;
+}
+
+h3{
+    color: #223B74;
+    margin-bottom: 5px;
+}
+
+.projects ul li{
+    margin-bottom: 15px;
+}
+
+.personal-details p{
+    margin: 3px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #223B74;
+  margin: 5px;
+}
+
+.education h4, p,  .experience h4, p {
+    margin: 5px;
+}
+
+
+.flex1, .flex2, .flex3, .flex4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
