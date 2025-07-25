@@ -18,16 +18,34 @@
   line-height: 1.5;
 }
 
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
 a {
     color: var(--link-color);
 }
 
 h3 {
+    color: var(--heading-color);
+    margin-bottom: 3px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--heading-color);
+}
+
+.personal-details p{
+    margin: 2px;
+}
+
+h3 {
     display: flex;
     align-items: center;
-    text-align: left;
+    text-align: center;
     margin-bottom: 5px;
-    color: var(--heading-color);
 }
 
 h3::after {
@@ -37,27 +55,22 @@ h3::after {
     margin-left: 10px;
 }
 
-.projects ul li{
-    margin-bottom: 15px;
+h4 {
+    margin-bottom: 0px;
+    margin-top: 2px;
 }
 
-.personal-details p{
-    margin: 3px;
+.experience p, .achievements p, .about p, .projects p {
+    margin: 2px;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid var(--heading-color);
-  margin: 5px 0;
+.projects a, .projects ul {
+    margin: 2px;
+    margin-bottom: 10px;
 }
 
-.education h4, p,  .experience h4, p {
-    margin: 0px;
+.proj {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-
-.flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
