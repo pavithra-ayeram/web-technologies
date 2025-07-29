@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="weather-container">
+    <div class="search-bar">
+      <input type="text" id="cityInput" placeholder="Enter city" />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="current-weather">
+      <div class="temp-info">
+        <h1 class="temperature">--°</h1>
+      </div>
+      <img class="weather-icon" src="" alt="weather" />
+    </div>
+
+    <div class="hourly-forecast" id="hourlyForecast"></div>
+
+    <div class="details">
+      <div>
+        <p>Humidity</p>
+        <p id="humidity">--%</p>
+      </div>
+      <div>
+        <p>Air Quality Index</p>
+        <p id="aqi" class="good">--</p>
+      </div>
+    </div>
+
+    <div class="weekly-forecast" id="weeklyForecast"></div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
