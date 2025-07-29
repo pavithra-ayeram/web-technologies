@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weather Dashboard</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-  <div class="weather-container">
-    <div class="search-bar">
-      <input type="text" id="cityInput" placeholder="Enter city" />
-      <button id="searchBtn">Search</button>
-    </div>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Weather Dashboard | Pavithra</title>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<div class="main-card">
+			<div class="search-box">
+				<input type="text" id="cityInput" placeholder="Enter city name"/>
+				<button onclick="handleSearch()">Search</button>
+			</div>
+			<div class="forecast-card">
+				<div class="location-info">
+					<h2 id="cityName">Loading...</h2>
+					<p id="weatherDescription"></p>
+				</div>
+				<div class="temp-icon">
+					<img id="weatherIcon" src="" alt="Weather Icon"/>
+					<h1 id="temperature"></h1>
+				</div>
+				<div class="hourly-forecast" id="hourlyForecast"></div>
+			</div>
 
-    <div class="current-weather">
-      <div class="temp-info">
-        <h1 class="temperature">--°</h1>
-      </div>
-      <img class="weather-icon" src="" alt="weather" />
-    </div>
+			<div class="info-card">
+				<div class="info-block">
+					<p>💧 Humidity</p>
+					<p id="humidity">--%</p>
+				</div>
+				<div class="info-block">
+					<p>🌫️ Air Quality</p>
+					<p id="aqi">--</p>
+				</div>
+			</div>
 
-    <div class="hourly-forecast" id="hourlyForecast"></div>
+			<div class="weekly-card" id="weeklyForecast"></div>
+		</div>
 
-    <div class="details">
-      <div>
-        <p>Humidity</p>
-        <p id="humidity">--%</p>
-      </div>
-      <div>
-        <p>Air Quality Index</p>
-        <p id="aqi" class="good">--</p>
-      </div>
-    </div>
-
-    <div class="weekly-forecast" id="weeklyForecast"></div>
-  </div>
-
-  <div id="toast" class="toast hidden"></div>
-
-  <script src="script.js"></script>
-</body>
+		<div id="toast" class="toast">Error</div>
+		<script src="script.js"></script>
+	</body>
 </html>

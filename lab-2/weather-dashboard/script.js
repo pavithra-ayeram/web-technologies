@@ -1,13 +1,17 @@
 const API_KEY = "e1b1c84b1d699a0a638357942327bc0e";
 
-document.getElementById("searchBtn").addEventListener("click", () => {
+document.addEventListener("DOMContentLoaded", () => {
+  fetchWeather("Atlanta"); 
+});
+
+function handleSearch() {
   const city = document.getElementById("cityInput").value.trim();
-  if (!city) {
-    showToast("Please enter a city name.");
+  if (!city || city.length < 3) {
+    showToast("Please enter a valid city name (min 3 letters).");
     return;
   }
   fetchWeather(city);
-});
+}
 
 async function fetchWeather(city) {
   try {
@@ -15,12 +19,12 @@ async function fetchWeather(city) {
     const geo = await geoRes.json();
 
     if (!geo || geo.length === 0 || !geo[0].name || geo[0].name.length < 3) {
-      showToast("Please enter a valid city name.");
+      showToast("Invalid City. Showing Atlanta instead");
+      fetchWeather("Atlanta");
       return;
     }
 
-
-    const { lat, lon } = geo[0];
+    const { lat, lon, name, country } = geo[0];
 
     const [currentRes, forecastRes, pollutionRes] = await Promise.all([
       fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`),
@@ -32,12 +36,13 @@ async function fetchWeather(city) {
     const forecast = await forecastRes.json();
     const pollution = await pollutionRes.json();
 
-    // If current weather has no weather field, it's probably bogus
     if (!current.weather || !forecast.list || forecast.list.length === 0) {
       showToast("City not found. Try a real one 🌍");
       return;
     }
 
+    document.getElementById("cityName").textContent = `${name}, ${country}`;
+    document.getElementById("weatherDescription").textContent = current.weather[0].description;
     updateCurrentWeather(current);
     updateHourlyForecast(forecast.list);
     updateWeeklyForecast(forecast.list);
@@ -49,8 +54,8 @@ async function fetchWeather(city) {
 }
 
 function updateCurrentWeather(data) {
-  document.querySelector(".temperature").textContent = `+${Math.round(data.main.temp)}°`;
-  document.querySelector(".weather-icon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  document.getElementById("temperature").textContent = `${Math.round(data.main.temp)}°C`;
+  document.getElementById("weatherIcon").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   document.getElementById("humidity").textContent = `${data.main.humidity}%`;
 }
 
@@ -59,11 +64,7 @@ function updateHourlyForecast(hourlyList) {
   container.innerHTML = "";
 
   const now = new Date();
-
-  const futureForecasts = hourlyList.filter(entry => {
-    const forecastTime = new Date(entry.dt * 1000);
-    return forecastTime > now;
-  }).slice(0, 4);
+  const futureForecasts = hourlyList.filter(entry => new Date(entry.dt * 1000) > now).slice(0, 4);
 
   futureForecasts.forEach(hour => {
     const time = new Date(hour.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -89,30 +90,24 @@ function updateWeeklyForecast(forecastList) {
   forecastList.forEach(entry => {
     const date = new Date(entry.dt * 1000);
     const dayKey = date.toLocaleDateString("en-US", { weekday: "short" });
-
     if (!groupedByDay[dayKey]) {
       groupedByDay[dayKey] = [];
     }
     groupedByDay[dayKey].push(entry);
   });
 
-  // Get today to exclude
   const today = new Date().toLocaleDateString("en-US", { weekday: "short" });
-
   let count = 0;
 
   for (let day in groupedByDay) {
     if (day === today) continue;
     if (count >= 6) break;
 
-    // Get entry closest to 12:00 PM
     const targetHour = 12;
     const closest = groupedByDay[day].reduce((prev, curr) => {
       const prevHour = new Date(prev.dt * 1000).getHours();
       const currHour = new Date(curr.dt * 1000).getHours();
-      return Math.abs(currHour - targetHour) < Math.abs(prevHour - targetHour)
-        ? curr
-        : prev;
+      return Math.abs(currHour - targetHour) < Math.abs(prevHour - targetHour) ? curr : prev;
     });
 
     const iconUrl = `https://openweathermap.org/img/wn/${closest.weather[0].icon}@2x.png`;
@@ -129,25 +124,23 @@ function updateWeeklyForecast(forecastList) {
   }
 }
 
-
 function updateAQI(aqi) {
   const aqiEl = document.getElementById("aqi");
-  let level = "good";
+  aqiEl.className = ""; // clear previous classes
 
-  if (aqi === 2) level = "moderate";
-  else if (aqi >= 3) level = "bad";
+  const levels = ["", "good", "fair", "moderate", "poor", "very-poor"];
+  const labels = ["", "Good", "Fair", "Moderate", "Poor", "Very Poor"];
 
-  aqiEl.className = level;
-  aqiEl.textContent = ["", "Good", "Fair", "Moderate", "Poor", "Very Poor"][aqi];
+  const level = levels[aqi] || "unknown";
+
+  aqiEl.classList.add(level);
+  aqiEl.textContent = labels[aqi] || "N/A";
 }
+
 
 function showToast(message) {
   const toast = document.getElementById("toast");
   toast.textContent = message;
   toast.classList.add("show");
-
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, 3000);
+  setTimeout(() => toast.classList.remove("show"), 3000);
 }
-
