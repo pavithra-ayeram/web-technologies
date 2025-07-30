@@ -1,3 +1,4 @@
+<!--Weather dashboard that displays the temperature, humidity, air quality index etc.,-->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,10 +9,14 @@
 	</head>
 	<body>
 		<div class="main-card">
+
+			<!--Search Box-->
 			<div class="search-box">
 				<input type="text" id="cityInput" placeholder="Enter city name"/>
 				<button onclick="handleSearch()">Search</button>
 			</div>
+
+			<!--Forecast Card-->
 			<div class="forecast-card">
 				<div class="location-info">
 					<h2 id="cityName">Loading...</h2>
@@ -24,6 +29,7 @@
 				<div class="hourly-forecast" id="hourlyForecast"></div>
 			</div>
 
+			<!--Information Card-->
 			<div class="info-card">
 				<div class="info-block">
 					<p>💧 Humidity</p>
@@ -35,6 +41,7 @@
 				</div>
 			</div>
 
+			<!--Weekly Forecase-->
 			<div class="weekly-card" id="weeklyForecast"></div>
 		</div>
 

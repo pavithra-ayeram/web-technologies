@@ -1,4 +1,4 @@
-const API_KEY = "e1b1c84b1d699a0a638357942327bc0e";
+const API_KEY = "YOUR_API_KEY";
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchWeather("Atlanta"); 
@@ -126,7 +126,7 @@ function updateWeeklyForecast(forecastList) {
 
 function updateAQI(aqi) {
   const aqiEl = document.getElementById("aqi");
-  aqiEl.className = ""; // clear previous classes
+  aqiEl.className = ""; 
 
   const levels = ["", "good", "fair", "moderate", "poor", "very-poor"];
   const labels = ["", "Good", "Fair", "Moderate", "Poor", "Very Poor"];
