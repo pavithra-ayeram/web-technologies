@@ -65,6 +65,7 @@ label {
   color: var(--color-text);
 }
 
+/* Input Form Styling */
 input,
 select {
   width: 100%;
@@ -101,6 +102,7 @@ select.invalid {
   height: 14px;
 }
 
+/* Button Styling */
 button {
   width: 100%;
   background: var(--color-white);

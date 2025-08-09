@@ -1,5 +1,6 @@
 const form = document.getElementById('registrationForm');
 
+// Field elements
 const fields = {
   name: {
     element: document.getElementById('name'),
@@ -9,7 +10,7 @@ const fields = {
   },
   email: {
     element: document.getElementById('email'),
-    errorId: 'emailError',
+    errorId: 'emailError',  
     validate: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim()),
     message: 'Enter a valid email',
   },
@@ -39,6 +40,7 @@ Object.values(fields).forEach(({ element, errorId, validate, message }) => {
   });
 });
 
+// Handle validation when submit button is clicked
 form.addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -73,6 +75,7 @@ function showSuccess(input, errorId) {
   document.getElementById(errorId).textContent = '';
 }
 
+// Clear Styles once form is submitted and accepted
 function clearStyles() {
   Object.values(fields).forEach(({ element, errorId }) => {
     element.classList.remove('valid', 'invalid');
