@@ -6,8 +6,7 @@ function SearchBar({ filterText, inStockOnly }) {
     <form className="search-bar">
       <input type="text" placeholder="Search..." value={filterText} />
       <p>
-        <input type="checkbox" checked={inStockOnly} readOnly /> Only show
-        products in stock
+        <input type="checkbox" checked={inStockOnly} readOnly /> Only show products in stock
       </p>
     </form>
   );

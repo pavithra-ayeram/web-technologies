@@ -1,0 +1,53 @@
+/* General app container */
+.app {
+  text-align: center;
+  box-shadow: 0 5px 32px rgba(77, 76, 76, 0.598);
+  margin: 250px;
+  margin-top: 100px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  border-radius: 20px;
+  padding: 50px;
+}
+
+/* Header */
+.header {
+  color: #0077B5;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Temperature display */
+.temp-display {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #0077B5;
+}
+
+/* Controls container */
+.btn {
+  margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  margin: 0 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Decrease button */
+.btn {
+  background-color: #0077B5;
+}
+
+.btn:hover {
+  background-color: #179ce4;
+}
