@@ -16,7 +16,6 @@ function App() {
     <div className="app">
       <Router>
         <Navbar />
-        {/* 👇 Wrap Routes in <main> so spacing & flex works */}
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

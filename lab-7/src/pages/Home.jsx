@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
       <ProfileSummary
-        name="Pav"
+        name="Pavithra T A"
         summary="Engineering student at Shiv Nadar University, Chennai. Passionate about software, problem-solving, and innovation."
         picture="profile.jpg"
       />
