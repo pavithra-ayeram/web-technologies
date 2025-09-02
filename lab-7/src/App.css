@@ -1,0 +1,88 @@
+:root {
+  --primary: #5482AE;
+  --dark: #304E6B;
+  --light: #C4D8EB;
+  --text: #1c1c1c;
+  --background: #f5f7fa;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* so footer positioning works */
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* App wrapper (flexbox layout) */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content area */
+main {
+  flex: 1; /* expands to push footer down */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 7rem 2rem 2rem; /* top padding = space below navbar */
+}
+
+/* Floating Navbar */
+nav {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  padding: 0.8rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--light);
+}
+
+/* Sticky Footer */
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* Card layout for CV sections */
+.card {
+  background: var(--light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
