@@ -20,12 +20,12 @@ function Education() {
 
   return (
     <div>
-      <Heading>Education</Heading>
+      <Heading children={Education}/>
       {education.map((edu, i) => (
         <div key={i}>
-          <SubHeading>{edu.degree}</SubHeading>
+          <SubHeading children={edu.degree} />
           <Paragraph>{edu.school} ({edu.year})</Paragraph>
-          <Paragraph>{edu.details}</Paragraph>
+          <Paragraph children={edu.details}/>
         </div>
       ))}
     </div>

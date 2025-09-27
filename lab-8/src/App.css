@@ -1,0 +1,122 @@
+:root {
+  /* 🎨 Color Palette */
+  --color-background: #FFF9F0;
+  --color-primary: #5482AE;
+  --color-primary-dark: #5482AE;
+  --color-text: #304E6B;
+  --color-subtext: #304E6B;
+  --color-card-border: #C4D8EB;
+  --color-tag-bg: #C4D8EB;
+  --color-tag-text: #5482AE;
+  --card-bg: #93BEE7;
+
+  /* 🧱 Layout */
+  --radius-large: 40px;
+  --radius-medium: 25px;
+  --radius-small: 8px;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== NAVBAR ========== */
+.navbar-custom {
+  background-color: white;
+  border-radius: var(--radius-large);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  padding: 12px 32px;
+  margin: 20px 50px;
+}
+
+.nav-link {
+  color: var(--color-text) !important;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* ========== HERO SECTION ========== */
+.hero-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-section h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  color: var(--color-subtext);
+}
+
+/* ========== CARD ========== */
+.card-custom {
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid var(--color-card-border);
+  box-shadow: 0 8px 24px rgba(60, 42, 87, 0.05);
+  transition: transform 0.2s ease-in-out;
+  margin: 20px;
+}
+
+.card-custom:hover {
+  transform: translateY(-4px);
+}
+
+.card-tag {
+  background-color: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: var(--radius-small);
+  margin-bottom: 15px;
+}
+
+/* ========== BUTTON ========== */
+.btn-custom {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-medium);
+  padding: 10px 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.btn-custom:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ========== TEXT CLASSES ========== */
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: x-large;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.description {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.home-fullscreen {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
