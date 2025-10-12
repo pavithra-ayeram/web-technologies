@@ -1,3 +1,4 @@
+// Serving routes
 const fs = require('fs');
 const path = require('path');
 
@@ -10,7 +11,7 @@ function router(req, res) {
 
     // Serve CSS
     if (method === 'GET' && url === '/styles.css') {
-        const cssPath = path.join(__dirname, 'handlers', 'styles.css'); // adjust if needed
+        const cssPath = path.join(__dirname, 'handlers', 'styles.css'); 
         fs.readFile(cssPath, (err, data) => {
             if (err) {
                 res.writeHead(500);
@@ -23,15 +24,20 @@ function router(req, res) {
         return;
     }
 
+    // Serve Home
     if (method === 'GET' && url === '/') {
         return homeHandler(req, res);
     }
 
-    if (method === 'GET' && url === '/posts') {
+    // Serve Posts
+    else if (method === 'GET' && url === '/posts') {
         return postHandler(req, res);
     }
 
-    return notFoundHandler(req, res);
+    // Serve 404
+    else {
+        return notFoundHandler(req, res);
+    }
 }
 
 module.exports = router;

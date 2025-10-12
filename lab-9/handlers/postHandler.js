@@ -1,6 +1,6 @@
-//posthandler - handles posts 
+// postHandler - handles posts 
 
-const posts = require('../data/posts'); // Import the posts data
+const posts = require('../data/posts'); 
 
 function postHandler(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html' });

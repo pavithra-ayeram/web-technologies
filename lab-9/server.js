@@ -1,5 +1,4 @@
-//server
-//main entry point for all things routing
+// Server -- Main entry point for all things routing
 const http = require('http');
 const router = require('./router'); 
 

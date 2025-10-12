@@ -1,4 +1,4 @@
-// not found handler- handles 404 error
+// not found handler - handles 404 error
 
 function notFoundHandler(req, res) {
     res.writeHead(404, { 'Content-Type': 'text/html' });
