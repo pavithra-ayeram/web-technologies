@@ -1,0 +1,216 @@
+/* Lab Record CSS - A4 PDF Format */
+
+/* CSS Variables for consistent styling */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-gray: #f8f9fa;
+    --border-color: #dee2e6;
+    --header-height: 40px;
+    --footer-height: 40px;
+    --content-padding: 20px;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* A4 Page Setup */
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto 20px auto;
+    background: white;
+    position: relative;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+}
+
+/* Content Area */
+.content {
+    padding: var(--content-padding);
+    flex: 1;
+    overflow: visible;
+    min-height: calc(297mm - var(--header-height) - var(--footer-height) - 60px);
+}
+
+/* Remove top margin for the first page */
+.page:first-of-type .content {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Lab Title */
+.lab-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 25px;
+    page-break-inside: auto;
+}
+
+.section:first-child {
+    margin-top: 10px;
+}
+
+.section:last-child {
+    margin-bottom: 30px;
+}
+
+.section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-left: 15px;
+}
+
+.section p {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 0 30px;
+}
+
+.section ul {
+    margin-bottom: 15px;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 0 70px;
+}
+
+/* Code Section Styles */
+.code-section {
+    margin: 20px 0;
+    page-break-inside: auto;
+}
+
+.code-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    padding: 0 30px;
+}
+
+pre {
+    background-color: rgb(0, 0, 0, 0.05);
+    padding: 15px 20px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    line-height: 1.4;
+    margin: 20px 40px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-shadow: 0 1px 3px rgba(203, 164, 164, 0.08);
+    page-break-inside: auto; /* ✅ Allow code blocks to split if needed */
+    break-inside: auto;       /* ✅ Modern equivalent for some browsers */
+}
+
+
+code {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+}
+
+/* Optional: make highlighted syntax pop a bit more */
+.hljs {
+    background: transparent;
+    padding: 0;
+}
+
+/* Image Styles */
+.design-image {
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+}
+
+.design-img {
+    page-break-inside: auto !important; /* allow breaking mid-page */
+    break-inside: auto !important;       /* modern syntax */
+    display: block;
+    max-width: 100%;
+    width: 45%; /* make them a bit larger if you like */
+    height: auto;
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+/* Screenshot container (two images side by side) */
+.screenshot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* space between the images */
+    flex-wrap: wrap; /* wrap if too large for one line */
+    margin: 20px 0;
+    page-break-inside: avoid; /* keeps them together */
+}
+
+/* Each image inside screenshot */
+.screenshot-img {
+    width: 45%; /* two images row */
+    height: auto;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+/* Result Styles */
+.result-text {
+    padding: 15px;
+    font-weight: 500;
+}
+
+/* ===== PRINT MODE ADJUSTMENTS ===== */
+@page {
+    size: A4;
+    margin: 25mm 10mm 25mm 10mm; /* top, right, bottom, left */
+}
+
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        background: white;
+    }
+
+    .page {
+        box-shadow: none; /* removes outer shadow when printing */
+        margin: 0 auto;
+        width: 100%;
+        min-height: auto;
+        page-break-after: always;
+    }
+
+    .content {
+        padding-top: 10mm;
+        padding-bottom: 10mm;
+    }
+
+    pre {
+        box-shadow: none;
+    }
+
+    img, .design-img, .screenshot-img {
+        max-height: auto; /* fits inside page height */
+        object-fit: contain;
+    }
+}

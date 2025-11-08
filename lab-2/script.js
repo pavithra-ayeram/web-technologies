@@ -1,4 +1,4 @@
-const API_KEY = "YOUR_API_KEY";
+const API_KEY = "e1b1c84b1d699a0a638357942327bc0e";
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchWeather("Atlanta"); 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 3: Event Registration Form</title>
+
+  <!-- ✅ Highlight.js (Light Theme + Core Library) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <!-- Lab 1: Resume/CV -->
+  <div class="page">        
+    <div class="content">
+      <h1 class="lab-title lab-start">Lab 3: Event Registration Form</h1>
+      
+      <div class="section">
+        <h2>1. Question</h2>
+        <p>Develop a registration form that validates user input for a community event signup using HTML, CSS, and JavaScript.</p>
+        <ul>
+          <li><b>Requirement Analysis:</b> Define all form fields and validation requirements (e.g., name, email, phone number, age). Specify which fields are required, valid formats (like regex for email), and any custom rules (e.g., age must be over 18).</li>
+          <li><b>Design:</b> Sketch a user-friendly registration form UI that provides feedback for invalid fields (e.g., red outlines, error messages). Use a wireframing tool, such as Figma, or create a hand-drawn sketch. Make sure the design is modular.</li>
+          <li><b>Implementation:</b> Build the form using HTML for structure, CSS for styling, and JavaScript for real-time form validation.</li>
+          <li><b>Testing:</b> Test form validation for all scenarios: required fields missing, invalid formats, boundary values (e.g., age 17 vs 18). Document edge cases and ensure clear error handling.</li>
+          <li><b>Deployment:</b> Host your project on GitHub with a structured repository, including a README explaining form validation rules. Deploy the form live using GitHub Pages or a similar free service.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>2. Design</h2>
+        <div class="design-image">
+          <img src="../assets/design/lab-3.png" alt="Lab 1 Design" class="design-img">
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>3. Code</h2>
+        <div class="code-section">
+          <h3>HTML Structure (index.html)</h3>
+          <pre><code class="language-html" data-src="../../lab-3/index.html"></code></pre>
+        </div>
+
+        <div class="code-section">
+          <h3>CSS Styling (style.css)</h3>
+          <pre><code class="language-css" data-src="../../lab-3/styles.css"></code></pre>
+        </div>
+
+        <div class="code-section">
+          <h3>JS Functionality (script.js)</h3>
+          <pre><code class="language-js" data-src="../../lab-3/script.js"></code></pre>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>4. Screenshot</h2>
+        <div class="screenshot">
+          <img src="../assets/outputs/lab-3.png" alt="Lab 2 Screenshot" class="screenshot-img">
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>5. Result</h2>
+        <p class="result-text">
+          The code was executed and the output was verified successfully.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Script to load and highlight external code -->
+  <script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const codeBlocks = document.querySelectorAll("code[data-src]");
+    for (const block of codeBlocks) {
+      const url = block.getAttribute("data-src");
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        block.textContent = text;
+        hljs.highlightElement(block);
+      } catch (err) {
+        block.textContent = "⚠️ Unable to load code from " + url;
+      }
+    }
+  });
+  </script>
+</body>
+</html>

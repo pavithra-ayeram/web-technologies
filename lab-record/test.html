@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Record Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="page cover-page">
+        <div class="cover-content">
+            <div class="university-info">
+                <h1>Shiv Nadar University, Chennai</h1>
+                <h2>School of Engineering</h2>
+                <h3>Department of Computer Science and Engineering</h3>
+            </div>
+            
+            <div class="course-info">
+                <h1 class="course-title">Web Technologies</h1>
+                <h2 class="lab-record-title">Lab Record</h2>
+            </div>
+            
+            <div class="student-info-cover">
+                <div class="info-row">
+                    <span class="label">Name:</span>
+                    <span class="value">Pavithra T A</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Registration Number:</span>
+                    <span class="value">23BCE1234</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Course Code:</span>
+                    <span class="value">CSE 2001</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Academic Year:</span>
+                    <span class="value">2024-2025</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Semester:</span>
+                    <span class="value">IV</span>
+                </div>
+            </div>
+            
+            <div class="date-info">
+                <p>Date of Submission: <span id="submission-date"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="page toc-page">
+        <div class="header">
+            <div class="date">Date: <span id="current-date-toc"></span></div>
+        </div>
+        
+        <div class="content">
+            <h1 class="toc-title">Table of Contents</h1>
+            
+            <div class="toc-content">
+                <div class="toc-section">
+                    <h2>Lab Experiments</h2>
+                    <div class="toc-list">
+                        <div class="toc-item">
+                            <span class="lab-number">Test Lab</span>
+                            <span class="lab-title-toc">System Verification</span>
+                            <span class="page-number">3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="toc-section">
+                    <h2>Lab Structure</h2>
+                    <div class="structure-info">
+                        <p>Each lab contains the following sections:</p>
+                        <ul>
+                            <li><strong>Question:</strong> Problem statement and objectives</li>
+                            <li><strong>Design/Plan:</strong> Modular design approach and planning</li>
+                            <li><strong>Code:</strong> Implementation with proper formatting</li>
+                            <li><strong>Screenshot:</strong> Output demonstration</li>
+                            <li><strong>Result:</strong> Analysis and conclusion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="student-info">Pavithra T A | Reg No: 23BCE1234</div>
+            <div class="lab-info">Table of Contents</div>
+        </div>
+    </div>
+
+    <!-- Test Page -->
+    <div class="page">
+        <div class="header">
+            <div class="date">Date: <span id="test-date"></span></div>
+        </div>
+        
+        <div class="content">
+            <h1 class="lab-title lab-start">Test Lab: System Verification</h1>
+            
+            <div class="section">
+                <h2>1. Question</h2>
+                <p>Test the lab record system to ensure proper A4 formatting, headers, footers, and PDF generation capabilities.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. Design/Plan</h2>
+                <div class="design-image">
+                    <img src="assets/design/lab-1.png" alt="Test Design" class="design-img">
+                </div>
+                <p class="design-explanation">
+                    This test page verifies that the lab record system works correctly with proper page formatting, responsive design, and PDF generation capabilities.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>3. Code</h2>
+                <div class="code-section">
+                    <h3>Test HTML Structure</h3>
+                    <pre><code class="html-code">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Test Page&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="page"&gt;
+        &lt;div class="header"&gt;
+            &lt;div class="date"&gt;Date: Test Date&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="content"&gt;
+            &lt;h1&gt;Test Content&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div class="footer"&gt;
+            &lt;div class="student-info"&gt;Test Student&lt;/div&gt;
+            &lt;div class="lab-info"&gt;Test Lab&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>4. Screenshot</h2>
+                <div class="screenshot">
+                    <img src="assets/outputs/lab-1.1.png" alt="Test Screenshot" class="screenshot-img">
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>5. Result</h2>
+                <p class="result-text">
+                    The lab record system is working correctly with proper A4 formatting, fixed headers and footers, and responsive design. The system is ready for PDF generation and can accommodate multiple lab pages with consistent styling.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="student-info">Pavithra T A | Reg No: 23BCE1234</div>
+            <div class="lab-info">Test Lab of 1</div>
+        </div>
+    </div>
+
+    <script>
+        // Set test date
+        const testDate = new Date().toLocaleDateString();
+        document.getElementById('test-date').textContent = testDate;
+        document.getElementById('current-date-toc').textContent = testDate;
+        document.getElementById('submission-date').textContent = testDate;
+    </script>
+</body>
+</html>

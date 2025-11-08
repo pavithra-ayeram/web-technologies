@@ -6,7 +6,7 @@ function Home() {
       <ProfileSummary
         name="Pavithra T A"
         summary="Engineering student at Shiv Nadar University, Chennai. Passionate about software, problem-solving, and innovation."
-        picture="profile.jpg"
+        picture="/profile.png"
       />
     </div>
   );

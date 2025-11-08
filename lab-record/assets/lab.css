@@ -1,0 +1,126 @@
+/* ----------------- General Page Setup ----------------- */
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    color: #222;
+}
+
+.lab-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20mm; /* print-friendly padding */
+    box-sizing: border-box;
+    background: #fff; /* white content area */
+}
+
+/* ----------------- Header ----------------- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    text-align: right;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    z-index: 1000;
+}
+
+/* ----------------- Footer ----------------- */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    z-index: 1000;
+}
+
+/* ----------------- Main Content ----------------- */
+main {
+    margin-top: 50px; /* avoid overlapping header */
+    margin-bottom: 50px; /* avoid overlapping footer */
+}
+
+h1, h2, h3 {
+    margin: 10px 0;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+/* ----------------- Images ----------------- */
+.image-box img {
+    display: block;
+    max-width: 200px; /* petite images */
+    height: auto;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+/* ----------------- Code Highlight ----------------- */
+pre {
+    background: #e0e0e0; /* light grey for code block */
+    color: #222;
+    padding: 10px;
+    overflow-x: hidden; /* prevent horizontal scroll */
+    font-size: 0.85rem;
+    border-radius: 5px;
+    white-space: pre-wrap; /* wrap long lines */
+    word-wrap: break-word; /* wrap words properly */
+}
+
+code {
+    font-family: 'Courier New', monospace;
+}
+
+/* ----------------- Print Styles ----------------- */
+@media print {
+    body, .lab-page {
+        margin: 0;
+        padding: 0;
+        width: 210mm;
+        height: 297mm;
+        background: #fff; /* white background for print */
+    }
+
+    header, footer {
+        position: fixed;
+    }
+
+    header {
+        top: 0;
+    }
+
+    footer {
+        bottom: 0;
+    }
+
+    .lab-page {
+        padding: 20mm;
+    }
+
+    .image-box img {
+        max-width: 150px; /* smaller for print */
+    }
+
+    pre {
+        font-size: 0.7rem;
+        padding: 5px;
+        white-space: pre-wrap; /* wrap code for print */
+        word-wrap: break-word;
+    }
+}

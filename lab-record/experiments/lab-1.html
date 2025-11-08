@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 1: Resume/CV Creation</title>
+
+  <!-- ✅ Highlight.js (Light Theme + Core Library) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <!-- Lab 1: Resume/CV -->
+  <div class="page">        
+    <div class="content">
+      <h1 class="lab-title lab-start">Lab 1: Resume/CV Creation</h1>
+      
+      <div class="section">
+        <h2>1. Question</h2>
+        <p>Create an HTML and CSS webpage that captures a resume (preferably yours) for a fresher full-stack developer at an IT company. Decide on the subdivisions and content. Push your content to GitHub and maintain proper version control with clear Read Me files. After completing your web page, host it on some free third-party hosting site of your choice.</p>
+      </div>
+
+      <div class="section">
+        <h2>2. Design</h2>
+        <div class="design-image">
+          <img src="../assets/design/lab-1.png" alt="Lab 1 Design" class="design-img">
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>3. Code</h2>
+        <div class="code-section">
+          <h3>HTML Structure (resume.html)</h3>
+          <pre><code class="language-html" data-src="../../lab-1/resume/resume.html"></code></pre>
+        </div>
+
+        <div class="code-section">
+          <h3>CSS Styling (resume.css)</h3>
+          <pre><code class="language-css" data-src="../../lab-1/resume/resume.css"></code></pre>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>4. Screenshot</h2>
+        <div class="screenshot">
+          <img src="../assets/outputs/lab-1.png" alt="Lab 1 Screenshot" class="screenshot-img">
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>5. Result</h2>
+        <p class="result-text">
+          The code was executed and the output was verified successfully.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Script to load and highlight external code -->
+  <script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const codeBlocks = document.querySelectorAll("code[data-src]");
+    for (const block of codeBlocks) {
+      const url = block.getAttribute("data-src");
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        block.textContent = text;
+        hljs.highlightElement(block);
+      } catch (err) {
+        block.textContent = "⚠️ Unable to load code from " + url;
+      }
+    }
+  });
+  </script>
+</body>
+</html>

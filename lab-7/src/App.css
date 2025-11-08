@@ -3,7 +3,7 @@
   --dark: #304E6B;
   --light: #C4D8EB;
   --text: #1c1c1c;
-  --background: #f5f7fa;
+  --background: #fffcf0;
 }
 
 /* Reset */
@@ -59,7 +59,7 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: #fffcf0;
   text-decoration: none;
   font-weight: 500;
   transition: 0.2s ease;

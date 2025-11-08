@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 10: Full-Stack Application</title>
+
+  <!-- ✅ Highlight.js (Light Theme + Core Library) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="./styles.css">
+
+  <style>
+    /* Design section: show images one after another */
+    .design-image {
+      display: flex;
+      flex-direction: column; /* Stack vertically */
+      align-items: center;    /* Center horizontally */
+      gap: 20px;              /* Space between images */
+      margin: 20px 0;
+    }
+
+    .design-img {
+      max-width: 90%;         /* Fit inside content area */
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Lab 1: Resume/CV -->
+  <div class="page">        
+    <div class="content">
+      <h1 class="lab-title lab-start">Lab 10: Full-Stack Application</h1>
+      
+      <div class="section">
+        <h2>1. Question</h2>
+        <p>Create a http server. Use the url module to parse the incoming request URL and extract the pathname for routing decisions. Read HTML files from the current directory.</p>
+        <p>Implement these routes:</p>
+        <ul>
+          <li>For pathname /, read and serve the content of index.html. If the file doesn't exist, log an error in a log file but still return a basic "Home Page" message.</li>
+          <li>For pathname /about, read and serve the content of about.html similarly and log an error in a log file case it is not found.</li>
+          <li>For any other pathname, return a 404 status with a Page Not Found.</li>
+        </ul>
+        <p>Create two simple HTML files in the same folder: index.html (with a title and a paragraph) and about.html (with a title and a paragraph).</p>
+        <p>Compress the project folder and upload it to the submission portal. Push the code to a public GitHub repository, host the application online on free hosting services, ensuring it matches local functionality, and provide the live URL in a README.md file. </p>
+      </div>
+
+      <div class="section">
+        <h2>2. Design</h2>
+        <div class="design-image">
+          <img src="../assets/design/lab-10.png" alt="Lab 1 Design" class="screenshot-img">
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>3. Code</h2>
+        <div class="code-section">
+          <h3>server.js</h3>
+          <pre><code class="language-js" data-src="../../lab-10/server.js"></code></pre>
+        </div>
+
+        <div class="code-section">
+          <h3>about.html</h3>
+          <pre><code class="language-html" data-src="../../lab-10/about.html"></code></pre>
+        </div>
+
+        <div class="code-section">
+          <h3>index.html</h3>
+          <pre><code class="language-html" data-src="../../lab-10/index.html"></code></pre>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>4. Screenshot</h2>
+        <div class="screenshot">
+          <img src="../assets/outputs/lab-10.png" alt="Lab 2 Screenshot" class="screenshot-img">
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>5. Result</h2>
+        <p class="result-text">
+          The code was executed and the output was verified successfully.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Script to load and highlight external code -->
+  <script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const codeBlocks = document.querySelectorAll("code[data-src]");
+    for (const block of codeBlocks) {
+      const url = block.getAttribute("data-src");
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        block.textContent = text;
+        hljs.highlightElement(block);
+      } catch (err) {
+        block.textContent = "⚠️ Unable to load code from " + url;
+      }
+    }
+  });
+  </script>
+</body>
+</html>

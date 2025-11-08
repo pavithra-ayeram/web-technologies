@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Record - Web Technologies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="page cover-page">
+        <div class="cover-content">
+            <div class="university-info">
+                <h1>Shiv Nadar University, Chennai</h1>
+                <h2>School of Engineering</h2>
+                <h3>Department of Computer Science and Engineering</h3>
+            </div>
+            
+            <div class="course-info">
+                <h1 class="course-title">Web Technologies</h1>
+                <h2 class="lab-record-title">Lab Record</h2>
+            </div>
+            
+            <div class="student-info-cover">
+                <div class="info-row">
+                    <span class="label">Name:</span>
+                    <span class="value">Pavithra T A</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Registration Number:</span>
+                    <span class="value">23011101093</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Course Code:</span>
+                    <span class="value">CS3005</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Academic Year:</span>
+                    <span class="value">2024-2025</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Semester:</span>
+                    <span class="value">V</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="page toc-page">        
+        <div class="content">
+            <h1 class="toc-title">Table of Contents</h1>
+            
+            <div class="toc-content">
+                <div class="toc-section">
+                    <h2>Lab Experiments</h2>
+                    <div class="toc-list">
+                        <div class="toc-item">
+                            <span class="lab-number">Lab 1</span>
+                            <span class="lab-title-toc">Resume/CV Creation</span>
+                            <span class="page-number">3</span>
+                        </div>
+                        <div class="toc-item">
+                            <span class="lab-number">Lab 2</span>
+                            <span class="lab-title-toc">Weather Dashboard</span>
+                            <span class="page-number">10</span>
+                        </div>
+                        <div class="toc-item">
+                            <span class="lab-number">Lab 3</span>
+                            <span class="lab-title-toc">Event Registration Form</span>
+                            <span class="page-number">18</span>
+                        </div>
+                        <div class="toc-item">
+                            <span class="lab-number">Lab 4</span>
+                            <span class="lab-title-toc">React Components</span>
+                            <span class="page-number">24</span>
+                        </div>
+                        <div class="toc-item">
+                            <span class="lab-number">Lab 5</span>
+                            <span class="lab-title-toc">Thermostat</span>
+                            <span class="page-number">30</span>
+                        </div>
+                        <div class="toc-item">
+                            <span class="lab-number">Lab 6</span>
+                            <span class="lab-title-toc">Countdown Timer</span>
+                            <span class="page-number">35</span>
+                        </div>
+                        <div class="toc-item">
+                            <span class="lab-number">Lab 7</span>
+                            <span class="lab-title-toc">Portfolio Website</span>
+                            <span class="page-number">42</span>
+                        </div>
+                        <div class="toc-item">
+                            <span class="lab-number">Lab 8</span>
+                            <span class="lab-title-toc">Social Media Dashboard</span>
+                            <span class="page-number">50</span>
+                        </div>
+                        <div class="toc-item">
+                            <span class="lab-number">Lab 9</span>
+                            <span class="lab-title-toc">Node.js Server</span>
+                            <span class="page-number">56</span>
+                        </div>
+                        <div class="toc-item">
+                            <span class="lab-number">Lab 10</span>
+                            <span class="lab-title-toc">Full-Stack Application</span>
+                            <span class="page-number">61</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Set current date for all pages
+        const currentDate = new Date().toLocaleDateString();
+        document.querySelectorAll('[id^="current-date"]').forEach(element => {
+            element.textContent = currentDate;
+        });
+        
+        // Set submission date for cover page
+        document.getElementById('submission-date').textContent = currentDate;
+    </script>
+    </body>
+</html>

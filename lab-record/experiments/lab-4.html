@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 4: React Components</title>
+
+  <!-- ✅ Highlight.js (Light Theme + Core Library) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="./styles.css">
+
+  <style>
+    /* Design section: show images one after another */
+    .design-image {
+      display: flex;
+      flex-direction: column; /* Stack vertically */
+      align-items: center;    /* Center horizontally */
+      gap: 20px;              /* Space between images */
+      margin: 20px 0;
+    }
+
+    .design-img {
+      max-width: 90%;         /* Fit inside content area */
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Lab 1: Resume/CV -->
+  <div class="page">        
+    <div class="content">
+      <h1 class="lab-title lab-start">Lab 4: React Components</h1>
+      
+      <div class="section">
+        <h2>1. Question</h2>
+        <p>For the given UI designs, perform the following,</p>
+        <ul>
+          <li>Identify the main React components in this design (e.g., parent and child components).</li>
+          <li>For each component, list the props it would receive (e.g., data like names, prices, or images passed from parent to child).</li>
+          <li>Draw a component hierarchy diagram showing the nesting (use boxes and arrows to represent parent-child relationships).</li>
+          <li>Ensure your design uses only functional components and props—no state, events, or other features.</li>
+          <li>Compress only the files in the src folder into a zip file, upload, and submit them.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>2. Design</h2>
+        <div class="design-image">
+          <img src="../assets/design/lab-4.png" alt="Lab 1 Design" class="screenshot-img">
+          <img src="../assets/design/lab-4-chd.png" alt="Lab 1 Design" class="screenshot-img">
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>3. Code</h2>
+        <div class="code-section">
+          <h3>App.jsx</h3>
+          <pre><code class="language-js" data-src="../../lab-4/src/App.jsx"></code></pre>
+        </div>
+
+        <div class="code-section">
+          <h3>App.css</h3>
+          <pre><code class="language-css" data-src="../../lab-4/src/App.css"></code></pre>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>4. Screenshot</h2>
+        <div class="screenshot">
+          <img src="../assets/outputs/lab-4.png" alt="Lab 2 Screenshot" class="screenshot-img">
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>5. Result</h2>
+        <p class="result-text">
+          The code was executed and the output was verified successfully.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Script to load and highlight external code -->
+  <script>
+  document.addEventListener("DOMContentLoaded", async () => {
+    const codeBlocks = document.querySelectorAll("code[data-src]");
+    for (const block of codeBlocks) {
+      const url = block.getAttribute("data-src");
+      try {
+        const response = await fetch(url);
+        const text = await response.text();
+        block.textContent = text;
+        hljs.highlightElement(block);
+      } catch (err) {
+        block.textContent = "⚠️ Unable to load code from " + url;
+      }
+    }
+  });
+  </script>
+</body>
+</html>
